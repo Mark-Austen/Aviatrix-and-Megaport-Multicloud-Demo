@@ -42,7 +42,7 @@ variable "megaport_aws_vxc_1_bgp_password" {
 
 variable "aws_account_id" {
   description = "AWS Account ID"
-  default     = "370553169139"
+  default     = "<account id>"
 }
 
 // Megaport - Azure variables
