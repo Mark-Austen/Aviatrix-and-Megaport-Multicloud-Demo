@@ -25,7 +25,7 @@ resource "megaport_mve" "mve_location_1" {
     vendor       = "aviatrix"
     product_size = "SMALL"
     image_id     = data.megaport_mve_images.aviatrix.mve_images.0.id
-    cloud_init   = "<cloud-init.txt | base64"
+    cloud_init   = "<cat cloud-init.txt | base64">
   }
 
     vnics = [
