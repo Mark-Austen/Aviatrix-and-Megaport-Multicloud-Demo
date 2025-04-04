@@ -2,8 +2,8 @@ resource "aws_vpc" "aws_vpc_tansit_1" {
   cidr_block = var.aws_vpc_transit_1_cidr
   
   tags = {
-    Name  = var.aws_vpc_transit_1_name
-    Owner = var.aws_owner_tag
+    name  = var.aws_vpc_transit_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -13,8 +13,8 @@ resource "aws_subnet" "aws_vpc_transit_1_subnet_1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name  = var.aws_vpc_transi_1_subnet_1_name
-    Owner = var.aws_owner_tag
+    name  = var.aws_vpc_transi_1_subnet_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -22,8 +22,8 @@ resource "aws_route_table" "aws_vpc_transit_1_route_table_1" {
   vpc_id           = aws_vpc.aws_vpc_tansit_1.id
 
   tags = {
-    Name  = var.aws_vpc_transit_1_route_table_1_name
-    Owner = var.aws_owner_tag
+    name  = var.aws_vpc_transit_1_route_table_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -36,8 +36,8 @@ resource "aws_internet_gateway" "aws_internet_gateway_vpc_transit_1" {
   vpc_id = aws_vpc.aws_vpc_tansit_1.id
 
   tags = {
-    Name  = var.aws_vpc_transit_1_route_table_1_name
-    Owner = var.aws_owner_tag
+    name  = var.aws_vpc_transit_1_route_table_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -51,8 +51,8 @@ resource "aws_vpn_gateway" "aws_vpn_gateway_vpc_transit_1" {
   vpc_id = aws_vpc.aws_vpc_tansit_1.id
 
   tags = {
-    Name  = var.aws_vpn_gateway_vpc_transit_1_name
-    Owner = var.aws_owner_tag
+    name  = var.aws_vpn_gateway_vpc_transit_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -60,8 +60,8 @@ resource "aws_vpc" "aws_vpc_spoke_1" {
   cidr_block = var.aws_vpc_spoke_1_cidr
   
   tags = {
-    Name  = var.aws_vpc_spoke_1_name
-    Owner = var.aws_owner_tag
+    name  = var.aws_vpc_spoke_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -71,8 +71,8 @@ resource "aws_subnet" "aws_vpc_spoke_1_subnet_1" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name  = var.aws_internet_gateway_vpc_transit_1_name
-    Owner = var.aws_owner_tag
+    name  = var.aws_internet_gateway_vpc_transit_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -80,8 +80,8 @@ resource "aws_route_table" "aws_vpc_spoke_1_route_table_1" {
   vpc_id = aws_vpc.aws_vpc_spoke_1.id
 
   tags = {
-    Name = var.aws_vpc_spoke_1_route_table_1_name
-    Owner = var.aws_owner_tag
+    name = var.aws_vpc_spoke_1_route_table_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -99,8 +99,8 @@ resource "aws_internet_gateway" "aws_internet_gateway_vpc_spoke_1" {
   vpc_id = aws_vpc.aws_vpc_spoke_1.id
 
   tags = {
-    Name  = var.aws_internet_gateway_vpc_spoke_1_name
-    Owner = var.aws_owner_tag
+    name  = var.aws_internet_gateway_vpc_spoke_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -126,7 +126,7 @@ resource "aws_security_group" "aws_instance_1_sg" {
   vpc_id      = aws_vpc.aws_vpc_spoke_1.id
 
   tags = {
-    Owner = var.aws_owner_tag
+    owner = var.aws_owner_tag
   }
 }
 
@@ -200,8 +200,8 @@ resource "aws_instance" "gatus_instance" {
     volume_size = 8
   }
   tags = {
-    Name  = var.aws_instance_1_name
-    Owner = var.aws_owner_tag
+    name  = var.aws_instance_1_name
+    owner = var.aws_owner_tag
   }
 }
 
@@ -225,6 +225,6 @@ resource "aws_dx_private_virtual_interface" "aws_dx_private_virtual_interface_1"
   ]
 
   tags = {
-    Owner = var.aws_owner_tag
+    owner = var.aws_owner_tag
   }
 }
